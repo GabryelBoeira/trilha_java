@@ -15,7 +15,7 @@ public class LogDataService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(LogDataService.class);
 
-    private LogDataRepository logDataRepository;
+    private final LogDataRepository logDataRepository;
 
     @Autowired
     public LogDataService(LogDataRepository logDataRepository) {
@@ -23,10 +23,7 @@ public class LogDataService {
     }
 
     public Flux<LogData> findAll() {
-        var list = logDataRepository.findAll();
-        Mono<Long> countMono = list.count();
-        countMono.subscribe(count -> LOGGER.error("Número total de logs: " + count));
-        return list;
+        return logDataRepository.findAll();
     }
 
 }
