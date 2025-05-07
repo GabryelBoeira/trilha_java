@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @Tag(name = "Log Data Controller", description = "Crud para Cadastro do usuario - H2SQL")
 public class UsuarioController {
 
-    private UsuarioService service;
+    private final UsuarioService service;
 
     @Autowired
     public UsuarioController(UsuarioService service) {

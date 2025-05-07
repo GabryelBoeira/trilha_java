@@ -7,7 +7,7 @@ import java.time.LocalDate;
 
 public class GsonUtils {
 
-    private static Gson gson;
+    private static final Gson gson;
 
     static {
         gson = new GsonBuilder()
