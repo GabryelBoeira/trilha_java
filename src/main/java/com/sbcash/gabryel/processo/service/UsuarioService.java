@@ -10,8 +10,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class UsuarioService {
 
-    private LogUsuarioPublisher usuarioPublisher;
-    private UsuarioRepository usuarioRepository;
+    private final LogUsuarioPublisher usuarioPublisher;
+    private final UsuarioRepository usuarioRepository;
 
     public UsuarioService(UsuarioRepository usuarioRepository, LogUsuarioPublisher usuarioPublisher) {
         this.usuarioRepository = usuarioRepository;

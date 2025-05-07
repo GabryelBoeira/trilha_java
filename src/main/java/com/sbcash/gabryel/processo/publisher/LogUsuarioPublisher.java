@@ -26,7 +26,7 @@ public class LogUsuarioPublisher extends BasePublisher<UsuarioDTO> {
             String message = Base64.getEncoder().encodeToString(gson.toJson(usuarioDTO).getBytes());
             send(message, "CRUD_NEW_USER");
         } catch (Exception e) {
-            LOG.error("LogUsuarioPublisher -> " + e.getMessage(), e.getCause());
+            LOG.error("LogUsuarioPublisher -> {}", e.getMessage(), e.getCause());
         }
     }
 }
